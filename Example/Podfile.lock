@@ -64,19 +64,14 @@ PODS:
   - nanopb/encode (0.3.901)
   - Nimble (7.0.3)
   - Quick (1.2.0)
-  - Swiftlytics (0.2.2):
-    - Swiftlytics/AppsFlyer (= 0.2.2)
-    - Swiftlytics/Core (= 0.2.2)
-    - Swiftlytics/Facebook (= 0.2.2)
-    - Swiftlytics/Firebase (= 0.2.2)
-  - Swiftlytics/AppsFlyer (0.2.2):
+  - Swiftlytics/AppsFlyer (0.2.3):
     - AppsFlyerFramework
     - Swiftlytics/Core
-  - Swiftlytics/Core (0.2.2)
-  - Swiftlytics/Facebook (0.2.2):
+  - Swiftlytics/Core (0.2.3)
+  - Swiftlytics/Facebook (0.2.3):
     - FacebookCore
     - Swiftlytics/Core
-  - Swiftlytics/Firebase (0.2.2):
+  - Swiftlytics/Firebase (0.2.3):
     - Firebase/Analytics
     - Firebase/Core
     - Swiftlytics/Core
@@ -84,8 +79,8 @@ PODS:
 DEPENDENCIES:
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
-  - Swiftlytics (from `../`)
   - Swiftlytics/AppsFlyer (from `../`)
+  - Swiftlytics/Core (from `../`)
   - Swiftlytics/Facebook (from `../`)
   - Swiftlytics/Firebase (from `../`)
 
@@ -123,8 +118,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  Swiftlytics: 23f2606308d588f3b6cdbec19092da12985828a6
+  Swiftlytics: 88642cb121ac766c481c64583c3fb082ea9de8c0
 
-PODFILE CHECKSUM: 582faa5b850ade60f56e6686e5953015151a28f6
+PODFILE CHECKSUM: 3530626c7454d35faa86a1d88b839e70a26f9a06
 
 COCOAPODS: 1.6.0
