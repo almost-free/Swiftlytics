@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Swiftlytics'
-  s.version          = '0.2.3'
+  s.version          = '0.2.4'
   s.summary          = 'Swiftlytics is a lightweight analytics abstraction for many arbitrary analytics providers'
 
 # This description is used to generate tags and improve search results.
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jon Willis' => 'jon@almostfree.tech' }
-  s.source           = { :git => 'https://github.com/almost-free/Swiftlytics.git', :branch => 'master' } # :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/almost-free/Swiftlytics.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/almostfreetech'
 
   s.ios.deployment_target = '9.0'
 
