@@ -1,0 +1,6 @@
+framework module Swiftlytics {
+  umbrella header "Swiftlytics-umbrella.h"
+
+  export *
+  module * { export * }
+}
