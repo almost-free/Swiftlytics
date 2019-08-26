@@ -18,7 +18,7 @@ public class FirebaseAnalyticsProvider: AnalyticsProvider {
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-        FirebaseConfiguration.shared.analyticsConfiguration.setAnalyticsCollectionEnabled(!SwiftlyticsBuildConfiguration.isDebug)
+        Analytics.setAnalyticsCollectionEnabled(false)
         FirebaseApp.configure()
         
         return true
