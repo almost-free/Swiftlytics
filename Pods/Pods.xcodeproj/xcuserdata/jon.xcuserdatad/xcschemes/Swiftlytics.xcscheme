@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E5CC453BF94DECCD0ECFC169C9FB544"
+               BlueprintIdentifier = "46497AB8DC1288B7A1BBA514FCD0ED8F"
+               BuildableName = "Swiftlytics.framework"
                BlueprintName = "Swiftlytics"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Swiftlytics.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
