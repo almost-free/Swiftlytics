@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Swiftlytics'
-  s.version          = '0.2.9'
+  s.version          = '0.2.10'
   s.summary          = 'Swiftlytics is a lightweight analytics abstraction for many arbitrary analytics providers'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.static_framework = true
 
-  s.swift_version = '5.0'
+  s.swift_version = '5.1'
 
   s.subspec 'Core' do |core|
     core.source_files = 'Swiftlytics/Core/**/*'

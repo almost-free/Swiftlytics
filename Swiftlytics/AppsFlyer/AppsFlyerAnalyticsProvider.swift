@@ -48,8 +48,8 @@ public class AppsFlyerAnalyticsProvider: AnalyticsProvider {
         AppsFlyerTracker.shared().customerUserID = id;
     }
 
-    public func setUserProperty(name propertyName: String, withValue value: Any) {
-        AppsFlyerTracker.shared().customData[propertyName] = value
+    public func setUserProperty(name propertyName: String, withValue value: Any){
+        AppsFlyerTracker.shared().customData![propertyName] = value
     }
 
     public func trackEvent(_ event: AnalyticsEventConvertible) {
