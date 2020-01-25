@@ -75,14 +75,14 @@ PODS:
   - nanopb/encode (0.3.901)
   - Nimble (8.0.4)
   - Quick (2.2.0)
-  - Swiftlytics/AppsFlyer (0.2.7):
+  - Swiftlytics/AppsFlyer (0.2.9):
     - AppsFlyerFramework
     - Swiftlytics/Core
-  - Swiftlytics/Core (0.2.7)
-  - Swiftlytics/Facebook (0.2.7):
+  - Swiftlytics/Core (0.2.9)
+  - Swiftlytics/Facebook (0.2.9):
     - FacebookCore
     - Swiftlytics/Core
-  - Swiftlytics/Firebase (0.2.7):
+  - Swiftlytics/Firebase (0.2.9):
     - Firebase/Analytics
     - Firebase/Core
     - Swiftlytics/Core
@@ -96,7 +96,7 @@ DEPENDENCIES:
   - Swiftlytics/Firebase (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AppsFlyerFramework
     - FacebookCore
     - FBSDKCoreKit
@@ -135,8 +135,8 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  Swiftlytics: 992fd9cc998ca83ea10e6fb931c8b54d2f30bdaf
+  Swiftlytics: c5c523a5a982df13923ace0fe4d38a0567878525
 
 PODFILE CHECKSUM: c09315caee2bab414ac29362a2ce4f07cfa6f65d
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

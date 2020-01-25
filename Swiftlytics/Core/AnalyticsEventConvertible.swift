@@ -29,12 +29,16 @@ public extension AnalyticsEventConvertible {
         let properties: [String: String] = try mirror.children
             .compactMap { label, value -> (label: String, value: String?)? in
 
-                guard let notNilLabel = label else {
+                func castToOptional<T>(_ any: Any) -> T {
+                    return any as! T
+                }
+
+                let optionalValue: String? = castToOptional(value)
+                guard let notNilLabel = label, optionalValue != nil else {
                     return nil
                 }
 
-                guard let stringValue =
-                    value as? String ?? (value as? CustomStringConvertible)?.description else {
+                guard let stringValue = value as? String ?? (value as? CustomStringConvertible)?.description else {
                         throw AnalyticsEventConvertibleError.analyticsEventValueTypeIsNotString
                 }
 
