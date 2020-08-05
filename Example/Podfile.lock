@@ -73,6 +73,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.0):
     - GoogleUtilities/Logger
+  - Mixpanel (3.6.0)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -81,16 +82,19 @@ PODS:
   - Nimble (8.0.5)
   - PromisesObjC (1.2.8)
   - Quick (2.2.0)
-  - Swiftlytics/AppsFlyer (0.2.9):
+  - Swiftlytics/AppsFlyer (0.4.0):
     - AppsFlyerFramework
     - Swiftlytics/Core
-  - Swiftlytics/Core (0.2.9)
-  - Swiftlytics/Facebook (0.2.9):
+  - Swiftlytics/Core (0.4.0)
+  - Swiftlytics/Facebook (0.4.0):
     - FacebookCore
     - Swiftlytics/Core
-  - Swiftlytics/Firebase (0.2.9):
+  - Swiftlytics/Firebase (0.4.0):
     - Firebase/Analytics
     - Firebase/Core
+    - Swiftlytics/Core
+  - Swiftlytics/Mixpanel (0.4.0):
+    - Mixpanel
     - Swiftlytics/Core
 
 DEPENDENCIES:
@@ -100,6 +104,7 @@ DEPENDENCIES:
   - Swiftlytics/Core (from `../`)
   - Swiftlytics/Facebook (from `../`)
   - Swiftlytics/Firebase (from `../`)
+  - Swiftlytics/Mixpanel (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -117,6 +122,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - Mixpanel
     - nanopb
     - Nimble
     - PromisesObjC
@@ -141,12 +147,13 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 574a983e829327d7c18f2627f65d9e80164ea8a4
   GoogleDataTransportCCTSupport: cad3cd6cdbdbad6b5c2c9206ec413402755faaaa
   GoogleUtilities: f8de7ddf8c706f58e9b405d53e38bbdaa2731e5a
+  Mixpanel: 446b6e7713aa34a9a3516ff7648d56551384fc94
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
-  Swiftlytics: c5c523a5a982df13923ace0fe4d38a0567878525
+  Swiftlytics: b82d32fa440c0963fb38927219bb12d2cb7fb0b5
 
-PODFILE CHECKSUM: c09315caee2bab414ac29362a2ce4f07cfa6f65d
+PODFILE CHECKSUM: 4f5e5182f7e6c84e480cbb1fbd46bf5f570e22af
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

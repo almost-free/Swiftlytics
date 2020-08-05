@@ -53,4 +53,9 @@ public class MultiAnalyticsProvider: AnalyticsProvider {
     public func setUserId(_ id: String) {
         providers.forEach { $0.setUserId(id) }
     }
+    
+    public func trackScreen(name: String) {
+        providers.forEach { $0.trackScreen(name: name) }
+    }
+    
 }

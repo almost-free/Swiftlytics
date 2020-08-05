@@ -20,7 +20,6 @@ private extension Dictionary where Iterator.Element == (key: String, value: Stri
 
 public class FacebookAnalyticsProvider: AnalyticsProvider {
 
-    
     public let priority: Int
     
     public init(priority: Int) {
@@ -62,5 +61,11 @@ public class FacebookAnalyticsProvider: AnalyticsProvider {
         let parameters = try! event.properties()?.toAppEventParametersDictionary() ?? [:]
 
         AppEvents.logEvent(AppEvents.Name(event.name), parameters: parameters)
+    }
+    
+    public func trackScreen(name: String) {
+        AppEvents.logEvent(AppEvents.Name.viewedContent, parameters: [
+            AppEvents.ParameterName.contentID.rawValue: AppEvents.ParameterValue(rawValue: name)
+        ])
     }
 }

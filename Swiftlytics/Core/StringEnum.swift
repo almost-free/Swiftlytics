@@ -11,7 +11,7 @@ import Foundation
 public protocol StringEnum: RawRepresentable, CustomStringConvertible where RawValue == String {}
 
 public extension StringEnum {
-    public var description: String {
+    var description: String {
         return rawValue
     }
 }

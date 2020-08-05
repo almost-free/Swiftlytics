@@ -1,57 +1,54 @@
 //
-//  FirebaseAnalyticsProvider.swift
+//  MixpanelAnalyticsProvider.swift
 //  Swiftlytics
 //
-//  Created by Jonathan Willis on 5/29/18.
-//  Copyright © 2018 Almost Free. All rights reserved.
+//  Created by Jonathan Willis on 8/5/20.
 //
 
-import FirebaseCore
-import FirebaseAnalytics
+import Mixpanel
 
-public class FirebaseAnalyticsProvider: AnalyticsProvider {
+public class MixpanelAnalyticsProvider: AnalyticsProvider {
     
     public let priority: Int
     
-    public init(priority: Int) {
+    private let token: String
+    private var mixpanel: Mixpanel!
+    
+    public init(priority: Int, mixpanelToken: String) {
         self.priority = priority
+        self.token = mixpanelToken
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-        FirebaseApp.configure()
-        
+        mixpanel = Mixpanel.sharedInstance(withToken: token, launchOptions: launchOptions)
         return true
     }
     
     public func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        Analytics.handleOpen(url)
-        
         return false
     }
     
     public func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        Analytics.handleUserActivity(userActivity)
-        
         return false
     }
     
     public func setUserId(_ id: String) {
-        Analytics.setUserID(id)
+        mixpanel.registerSuperProperties(["distinct_id": id])
     }
 
     public func setUserProperty(name propertyName: String, withValue value: Any) {
         if let value = value as? String {
-            Analytics.setUserProperty(value, forName: propertyName)
+            mixpanel.registerSuperProperties([propertyName: value])
         } else if let value = value as? CustomStringConvertible {
-            Analytics.setUserProperty(value.description, forName: propertyName)
+            mixpanel.registerSuperProperties([propertyName: value])
         }
     }
     
     public func trackEvent(_ event: AnalyticsEventConvertible) {
-        Analytics.logEvent(event.name, parameters: try! event.properties())
+        mixpanel.track(event.name, properties: try! event.properties())
     }
     
     public func trackScreen(name: String) {
-        Analytics.setScreenName(name, screenClass: nil)
+        mixpanel.track("Screen View", properties: ["page": name])
     }
 }

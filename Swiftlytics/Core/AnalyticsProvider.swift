@@ -18,6 +18,8 @@ public protocol AnalyticsProvider: class {
     
     // Custom analytics methods
     
+    func trackScreen(name: String)
+    
     func setUserId(_ id: String)
 
     func setUserProperty(name propertyName: String, withValue value: Any)

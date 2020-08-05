@@ -12,7 +12,8 @@ import Swiftlytics
 let swiftlytics: AnalyticsProvider = MultiAnalyticsProvider(providers: [
 //    FirebaseAnalyticsProvider(priority: 3), //requires GoogleServices.info
     FacebookAnalyticsProvider(priority: 2),
-    AppsFlyerAnalyticsProvider(priority: 1, devKey: "YOUR_DEV_KEY", appId: "YOUR_APP_ID")
+    AppsFlyerAnalyticsProvider(priority: 1, devKey: "YOUR_DEV_KEY", appId: "YOUR_APP_ID"),
+    MixpanelAnalyticsProvider(priority: 3, mixpanelToken: "YOUR_TOKEN"),
 ])
 
 @UIApplicationMain

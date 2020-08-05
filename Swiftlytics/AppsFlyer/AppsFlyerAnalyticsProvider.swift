@@ -55,4 +55,8 @@ public class AppsFlyerAnalyticsProvider: AnalyticsProvider {
     public func trackEvent(_ event: AnalyticsEventConvertible) {
         AppsFlyerTracker.shared().trackEvent(event.name, withValues: try! event.properties())
     }
+    
+    public func trackScreen(name: String) {
+        AppsFlyerTracker.shared().trackEvent("Screen View", withValues: ["page": name])
+    }
 }

@@ -5,6 +5,7 @@ target 'Swiftlytics_Example' do
   pod 'Swiftlytics/Firebase', :path => '../'
   pod 'Swiftlytics/AppsFlyer', :path => '../'
   pod 'Swiftlytics/Facebook', :path => '../'
+  pod 'Swiftlytics/Mixpanel', :path => '../'
 
   target 'Swiftlytics_Tests' do
     inherit! :search_paths

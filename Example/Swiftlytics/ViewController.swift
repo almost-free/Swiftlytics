@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         swiftlytics.setUserId(UUID().uuidString) // your persistent database value in production
         swiftlytics.setUserProperty(name: "name", withValue: "Sandy")
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        swiftlytics.trackScreen(name: String(describing: type(of: self)))
+    }
 
     private var count: UInt = 0
 
