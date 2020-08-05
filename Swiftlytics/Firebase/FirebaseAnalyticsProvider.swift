@@ -52,6 +52,6 @@ public class FirebaseAnalyticsProvider: AnalyticsProvider {
     }
     
     public func trackScreen(name: String) {
-        Analytics.setScreenName(name, screenClass: nil)
+        Analytics.logEvent(AnalyticsEventScreenView, parameters: [AnalyticsParameterScreenName: name])
     }
 }
