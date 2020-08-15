@@ -68,4 +68,12 @@ public class FacebookAnalyticsProvider: AnalyticsProvider {
             AppEvents.ParameterName.contentID.rawValue: AppEvents.ParameterValue(rawValue: name)
         ])
     }
+    
+    public func trackError(_ error: Error) {
+        // no-op
+    }
+    
+    public func trackError(_ error: NSError) {
+        // no-op
+    }
 }

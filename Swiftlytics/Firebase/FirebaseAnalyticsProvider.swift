@@ -54,4 +54,12 @@ public class FirebaseAnalyticsProvider: AnalyticsProvider {
     public func trackScreen(name: String) {
         Analytics.logEvent(AnalyticsEventScreenView, parameters: [AnalyticsParameterScreenName: name])
     }
+    
+    public func trackError(_ error: Error) {
+        // no-op
+    }
+    
+    public func trackError(_ error: NSError) {
+        // no-op
+    }
 }

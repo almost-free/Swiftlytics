@@ -59,4 +59,12 @@ public class AppsFlyerAnalyticsProvider: AnalyticsProvider {
     public func trackScreen(name: String) {
         AppsFlyerTracker.shared().trackEvent("Screen View", withValues: ["page": name])
     }
+    
+    public func trackError(_ error: Error) {
+        // no-op
+    }
+    
+    public func trackError(_ error: NSError) {
+        // no-op
+    }
 }

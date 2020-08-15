@@ -58,4 +58,11 @@ public class MultiAnalyticsProvider: AnalyticsProvider {
         providers.forEach { $0.trackScreen(name: name) }
     }
     
+    public func trackError(_ error: Error) {
+        providers.forEach { $0.trackError(error) }
+    }
+    
+    public func trackError(_ error: NSError) {
+        providers.forEach { $0.trackError(error) }
+    }
 }

@@ -25,4 +25,8 @@ public protocol AnalyticsProvider: class {
     func setUserProperty(name propertyName: String, withValue value: Any)
     
     func trackEvent(_ event: AnalyticsEventConvertible)
+    
+    func trackError(_ error: Error)
+    
+    func trackError(_ error: NSError)
 }

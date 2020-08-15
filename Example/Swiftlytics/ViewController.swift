@@ -18,10 +18,16 @@ class ViewController: UIViewController {
         swiftlytics.setUserProperty(name: "name", withValue: "Sandy")
     }
     
+    struct TestError: Error { }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         swiftlytics.trackScreen(name: String(describing: type(of: self)))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            swiftlytics.trackError(TestError())
+        }
     }
 
     private var count: UInt = 0

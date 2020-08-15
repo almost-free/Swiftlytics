@@ -74,18 +74,18 @@ PODS:
   - Nimble (8.1.1)
   - PromisesObjC (1.2.9)
   - Quick (3.0.0)
-  - Swiftlytics/AppsFlyer (0.4.0):
+  - Swiftlytics/AppsFlyer (0.5.0):
     - AppsFlyerFramework
     - Swiftlytics/Core
-  - Swiftlytics/Core (0.4.0)
-  - Swiftlytics/Facebook (0.4.0):
+  - Swiftlytics/Core (0.5.0)
+  - Swiftlytics/Facebook (0.5.0):
     - FacebookCore
     - Swiftlytics/Core
-  - Swiftlytics/Firebase (0.4.0):
+  - Swiftlytics/Firebase (0.5.0):
     - Firebase/Analytics
     - Firebase/Core
     - Swiftlytics/Core
-  - Swiftlytics/Mixpanel (0.4.0):
+  - Swiftlytics/Mixpanel (0.5.0):
     - Mixpanel
     - Swiftlytics/Core
 
@@ -138,7 +138,7 @@ SPEC CHECKSUMS:
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
-  Swiftlytics: b82d32fa440c0963fb38927219bb12d2cb7fb0b5
+  Swiftlytics: 6537a13a53eef0366b216b9c3563a3b8b6e757e5
 
 PODFILE CHECKSUM: 4f5e5182f7e6c84e480cbb1fbd46bf5f570e22af
 

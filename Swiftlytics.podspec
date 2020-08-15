@@ -44,6 +44,13 @@ Pod::Spec.new do |s|
       firebase.dependency 'Firebase/Analytics'
       firebase.dependency 'Swiftlytics/Core'
   end
+  
+  s.subspec 'FirebaseCrashlytics' do |firebase|
+      firebase.source_files = 'Swiftlytics/Firebase/**/*'
+      firebase.dependency 'Firebase/Core'
+      firebase.dependency 'Firebase/Crashlytics'
+      firebase.dependency 'Swiftlytics/Core'
+  end
 
   s.subspec 'Facebook' do |facebook|
       facebook.source_files = 'Swiftlytics/Facebook/**/*'
