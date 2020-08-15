@@ -3,6 +3,8 @@ use_frameworks!
 target 'Swiftlytics_Example' do
   pod 'Swiftlytics/Core', :path => '../'
   pod 'Swiftlytics/Firebase', :path => '../'
+  pod 'Swiftlytics/FirebaseCrashlytics', :path => '../'
+  pod 'Swiftlytics/AppCenter', :path => '../'
   pod 'Swiftlytics/AppsFlyer', :path => '../'
   pod 'Swiftlytics/Facebook', :path => '../'
   pod 'Swiftlytics/Mixpanel', :path => '../'

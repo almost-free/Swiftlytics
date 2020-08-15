@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Swiftlytics'
-  s.version          = '0.4.1'
+  s.version          = '0.5.0'
   s.summary          = 'Swiftlytics is a lightweight analytics abstraction for many arbitrary analytics providers'
 
 # This description is used to generate tags and improve search results.
@@ -57,7 +57,13 @@ Pod::Spec.new do |s|
       facebook.dependency 'FacebookCore'
       facebook.dependency 'Swiftlytics/Core'
   end
-
+  
+  s.subspec 'AppCenter' do |appsflyer|
+      appsflyer.source_files = 'Swiftlytics/AppsFlyer/**/*'
+      appsflyer.dependency 'AppCenter'
+      appsflyer.dependency 'Swiftlytics/Core'
+  end
+  
   s.subspec 'AppsFlyer' do |appsflyer|
       appsflyer.source_files = 'Swiftlytics/AppsFlyer/**/*'
       appsflyer.dependency 'AppsFlyerFramework'

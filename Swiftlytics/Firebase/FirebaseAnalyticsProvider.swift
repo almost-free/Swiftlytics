@@ -31,7 +31,7 @@ public class FirebaseAnalyticsProvider: AnalyticsProvider {
     
     public func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         Analytics.handleUserActivity(userActivity)
-        
+
         return false
     }
     

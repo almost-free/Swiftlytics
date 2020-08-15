@@ -1,12 +1,10 @@
 //
 //  AppsFlyerAnalyticsProvider.swift
-//  Swiftlytics
+//  FacebookCore
 //
-//  Created by Jonathan Willis on 5/31/18.
-//  Copyright © 2018 Almost Free. All rights reserved.
+//  Created by Jonathan Willis on 8/15/20.
 //
 
-import Foundation
 import AppsFlyerLib
 
 public class AppsFlyerAnalyticsProvider: AnalyticsProvider {
@@ -68,3 +66,4 @@ public class AppsFlyerAnalyticsProvider: AnalyticsProvider {
         // no-op
     }
 }
+
