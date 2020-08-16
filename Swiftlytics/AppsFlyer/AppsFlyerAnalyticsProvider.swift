@@ -1,6 +1,6 @@
 //
 //  AppsFlyerAnalyticsProvider.swift
-//  FacebookCore
+//  Swiftlytics
 //
 //  Created by Jonathan Willis on 8/15/20.
 //
