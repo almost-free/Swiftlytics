@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Swiftlytics'
-  s.version          = '0.5.0'
+  s.version          = '0.5.1'
   s.summary          = 'Swiftlytics is a lightweight analytics abstraction for many arbitrary analytics providers'
 
 # This description is used to generate tags and improve search results.

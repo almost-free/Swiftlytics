@@ -1,15 +1,21 @@
 //
-//  FirebaseAnalyticsProvider.swift
+//  FirebaseCrashlyticsAnalyticsProvider.swift
 //  Swiftlytics
 //
-//  Created by Jonathan Willis on 5/29/18.
-//  Copyright © 2018 Almost Free. All rights reserved.
+//  Created by Jonathan Willis on 8/16/20.
 //
 
 import FirebaseCore
-import FirebaseAnalytics
+import FirebaseCrashlytics
 
-public class FirebaseAnalyticsProvider: AnalyticsProvider {
+struct NSErrorWrapper: Error {
+    let nsError: NSError
+    var localizedDescription: String {
+        nsError.localizedDescription
+    }
+}
+
+public class FirebaseCrashlyticsAnalyticsProvider: AnalyticsProvider {
     
     public let priority: Int
     
@@ -26,42 +32,34 @@ public class FirebaseAnalyticsProvider: AnalyticsProvider {
     }
     
     public func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        Analytics.handleOpen(url)
-        
         return false
     }
     
     public func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        Analytics.handleUserActivity(userActivity)
-
         return false
     }
     
     public func setUserId(_ id: String) {
-        Analytics.setUserID(id)
+        Crashlytics.crashlytics().setUserID(id)
     }
 
     public func setUserProperty(name propertyName: String, withValue value: Any) {
-        if let value = value as? String {
-            Analytics.setUserProperty(value, forName: propertyName)
-        } else if let value = value as? CustomStringConvertible {
-            Analytics.setUserProperty(value.description, forName: propertyName)
-        }
+        Crashlytics.crashlytics().setCustomValue(value, forKey: propertyName)
     }
     
     public func trackEvent(_ event: AnalyticsEventConvertible) {
-        Analytics.logEvent(event.name, parameters: try! event.properties())
+        Crashlytics.crashlytics().log("Event: \(event.name)")
     }
     
     public func trackScreen(name: String) {
-        Analytics.logEvent(AnalyticsEventScreenView, parameters: [AnalyticsParameterScreenName: name])
+        Crashlytics.crashlytics().log("Screen View \(name)")
     }
     
     public func trackError(_ error: Error) {
-        // no-op
+        Crashlytics.crashlytics().record(error: error)
     }
     
     public func trackError(_ error: NSError) {
-        // no-op
+        Crashlytics.crashlytics().record(error: NSErrorWrapper(nsError: error))
     }
 }

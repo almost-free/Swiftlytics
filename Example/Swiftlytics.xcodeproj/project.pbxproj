@@ -16,6 +16,7 @@
 		8458D14327EB139DBECBE429 /* Pods_Swiftlytics_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C89BA2C13C3F1C4A9276DE6 /* Pods_Swiftlytics_Example.framework */; };
 		94DB8953FFA7CBD58F1DD8A1 /* Pods_Swiftlytics_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AE28A0D7C002EA667335C9 /* Pods_Swiftlytics_Tests.framework */; };
 		FC39BBC821180B720067ABED /* MemoryWarningEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39BBC721180B720067ABED /* MemoryWarningEvent.swift */; };
+		FCB6BD5424E9A4F70063D8CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCB6BD5324E9A4F70063D8CB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		EFFB647253A98C17119DA0DB /* Pods-Swiftlytics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftlytics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftlytics_Tests/Pods-Swiftlytics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3DA95342F99852913E8C687 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FC39BBC721180B720067ABED /* MemoryWarningEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWarningEvent.swift; sourceTree = "<group>"; };
+		FCB6BD5324E9A4F70063D8CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				FCB6BD5324E9A4F70063D8CB /* GoogleService-Info.plist */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for Swiftlytics */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				FCB6BD5424E9A4F70063D8CB /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);

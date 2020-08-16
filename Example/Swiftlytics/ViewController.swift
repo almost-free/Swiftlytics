@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             swiftlytics.trackError(TestError())
+
+            fatalError()
         }
     }
 
