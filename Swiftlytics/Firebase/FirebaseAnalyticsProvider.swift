@@ -11,15 +11,19 @@ import FirebaseAnalytics
 
 public class FirebaseAnalyticsProvider: AnalyticsProvider {
     
-    public let priority: Int
+    private let options: FirebaseOptions?
     
-    public init(priority: Int) {
-        self.priority = priority
+    public init(_ options: FirebaseOptions? = nil) {
+        self.options = options
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         if FirebaseApp.app() == nil {
-            FirebaseApp.configure()
+            if let options = options {
+                FirebaseApp.configure(options: options)
+            } else {
+                FirebaseApp.configure()
+            }
         }
         
         return true
@@ -39,6 +43,11 @@ public class FirebaseAnalyticsProvider: AnalyticsProvider {
     
     public func setUserId(_ id: String) {
         Analytics.setUserID(id)
+    }
+    
+    public func resetUser() {
+        Analytics.setUserID(nil)
+        Analytics.resetAnalyticsData()
     }
 
     public func setUserProperty(name propertyName: String, withValue value: Any) {

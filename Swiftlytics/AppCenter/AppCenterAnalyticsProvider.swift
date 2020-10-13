@@ -61,6 +61,10 @@ public class AppCenterAnalyticsProvider: AnalyticsProvider {
     public func setUserId(_ id: String) {
         MSAppCenter.setUserId(id)
     }
+    
+    public func resetUser() {
+        // no-op
+    }
 
     public func setUserProperty(name propertyName: String, withValue value: Any) {
         

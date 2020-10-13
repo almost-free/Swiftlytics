@@ -15,9 +15,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 import Swiftlytics
 
 let swiftlytics: AnalyticsProvider = MultiAnalyticsProvider(providers: [
-    FirebaseAnalyticsProvider(priority: 3), //requires GoogleServices.info
-    FacebookAnalyticsProvider(priority: 2),
-    AppsFlyerAnalyticsProvider(priority: 1, devKey: "YOUR_DEV_KEY", appId: "YOUR_APP_ID")
+    FirebaseAnalyticsProvider(), //requires GoogleServices.info
+    FacebookAnalyticsProvider(),
+    AppsFlyerAnalyticsProvider(devKey: "YOUR_DEV_KEY", appId: "YOUR_APP_ID")
 ])
 ```
 

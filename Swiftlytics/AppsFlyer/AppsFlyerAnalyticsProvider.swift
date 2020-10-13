@@ -9,53 +9,56 @@ import AppsFlyerLib
 
 public class AppsFlyerAnalyticsProvider: AnalyticsProvider {
     
-    public let priority: Int
     private let devKey: String!
     private let appId: String!
+    private let tracker: AppsFlyerLib
 
-    public init(priority: Int, devKey: String, appId: String) {
-        self.priority = priority
+    public init(devKey: String, appId: String) {
         self.devKey = devKey
         self.appId = appId
-        AppsFlyerTracker.shared().customData = [:]
+        self.tracker = AppsFlyerLib.shared()
+        self.tracker.customData = [:]
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-        AppsFlyerTracker.shared().appsFlyerDevKey = devKey
-        AppsFlyerTracker.shared().appleAppID = appId
-        AppsFlyerTracker.shared().useUninstallSandbox = SwiftlyticsBuildConfiguration.isDebug
-        AppsFlyerTracker.shared().useReceiptValidationSandbox = SwiftlyticsBuildConfiguration.isDebug
-        AppsFlyerTracker.shared().isDebug = SwiftlyticsBuildConfiguration.isDebug
-
-        AppsFlyerTracker.shared().trackAppLaunch()
+        tracker.appsFlyerDevKey = devKey
+        tracker.appleAppID = appId
+        tracker.useUninstallSandbox = SwiftlyticsBuildConfiguration.isDebug
+        tracker.useReceiptValidationSandbox = SwiftlyticsBuildConfiguration.isDebug
+        tracker.isDebug = SwiftlyticsBuildConfiguration.isDebug
         
         return true
     }
     
     public func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        AppsFlyerTracker.shared().handleOpen(url, options: options)
+        tracker.handleOpen(url, options: options)
         return false
     }
     
     public func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         // see: https://support.appsflyer.com/hc/en-us/articles/207032066-AppsFlyer-SDK-Integration-iOS#5-tracking-deep-linking
-        return AppsFlyerTracker.shared().continue(userActivity, restorationHandler: nil)
+        return tracker.continue(userActivity, restorationHandler: nil)
     }
     
     public func setUserId(_ id: String) {
-        AppsFlyerTracker.shared().customerUserID = id;
+        tracker.customerUserID = id
+    }
+    
+    public func resetUser() {
+        tracker.customerUserID = nil
+        tracker.customData = nil
     }
 
     public func setUserProperty(name propertyName: String, withValue value: Any){
-        AppsFlyerTracker.shared().customData![propertyName] = value
+        tracker.customData![propertyName] = value
     }
 
     public func trackEvent(_ event: AnalyticsEventConvertible) {
-        AppsFlyerTracker.shared().trackEvent(event.name, withValues: try! event.properties())
+        tracker.logEvent(event.name, withValues: try! event.properties())
     }
     
     public func trackScreen(name: String) {
-        AppsFlyerTracker.shared().trackEvent("Screen View", withValues: ["page": name])
+        tracker.logEvent("Screen View", withValues: ["page": name])
     }
     
     public func trackError(_ error: Error) {

@@ -9,13 +9,10 @@ import Foundation
 
 public class MultiAnalyticsProvider: AnalyticsProvider {
 
-    public let priority: Int
-
     private let providers: [AnalyticsProvider]
 
-    public init(providers: [AnalyticsProvider], priority: Int = 0) {
-        self.priority = priority
-        self.providers = providers.sorted { $0.priority > $1.priority }
+    public init(providers: [AnalyticsProvider]) {
+        self.providers = providers
     }
 
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
@@ -52,6 +49,10 @@ public class MultiAnalyticsProvider: AnalyticsProvider {
 
     public func setUserId(_ id: String) {
         providers.forEach { $0.setUserId(id) }
+    }
+    
+    public func resetUser() {
+        providers.forEach { $0.resetUser() }
     }
     
     public func trackScreen(name: String) {

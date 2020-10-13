@@ -2,7 +2,6 @@ import Foundation
 
 public protocol AnalyticsProvider: class {
     // UIApplicationDelegate methods
-    var priority: Int { get }
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
@@ -21,6 +20,8 @@ public protocol AnalyticsProvider: class {
     func trackScreen(name: String)
     
     func setUserId(_ id: String)
+
+    func resetUser()
 
     func setUserProperty(name propertyName: String, withValue value: Any)
     

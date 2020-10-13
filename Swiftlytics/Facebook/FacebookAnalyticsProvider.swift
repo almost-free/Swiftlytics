@@ -19,11 +19,8 @@ private extension Dictionary where Iterator.Element == (key: String, value: Stri
 }
 
 public class FacebookAnalyticsProvider: AnalyticsProvider {
-
-    public let priority: Int
     
-    public init(priority: Int) {
-        self.priority = priority
+    public init() {
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
@@ -48,9 +45,12 @@ public class FacebookAnalyticsProvider: AnalyticsProvider {
         return false
     }
 
-    
     public func setUserId(_ id: String) {
         AppEvents.userID = id
+    }
+    
+    public func resetUser() {
+        AppEvents.clearUserID()
     }
 
     public func setUserProperty(name propertyName: String, withValue value: Any) {

@@ -17,10 +17,10 @@ struct NSErrorWrapper: Error {
 
 public class FirebaseCrashlyticsAnalyticsProvider: AnalyticsProvider {
     
-    public let priority: Int
+    private let options: FirebaseOptions?
     
-    public init(priority: Int) {
-        self.priority = priority
+    public init(_ options: FirebaseOptions? = nil) {
+        self.options = options
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
@@ -43,6 +43,10 @@ public class FirebaseCrashlyticsAnalyticsProvider: AnalyticsProvider {
         Crashlytics.crashlytics().setUserID(id)
     }
 
+    public func resetUser() {
+        // no-op ?
+    }
+    
     public func setUserProperty(name propertyName: String, withValue value: Any) {
         Crashlytics.crashlytics().setCustomValue(value, forKey: propertyName)
     }

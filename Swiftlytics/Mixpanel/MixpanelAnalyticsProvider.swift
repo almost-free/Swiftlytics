@@ -9,18 +9,16 @@ import Mixpanel
 
 public class MixpanelAnalyticsProvider: AnalyticsProvider {
     
-    public let priority: Int
-    
     private let token: String
     private var mixpanel: Mixpanel!
     
-    public init(priority: Int, mixpanelToken: String) {
-        self.priority = priority
+    public init(mixpanelToken: String) {
         self.token = mixpanelToken
     }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
         mixpanel = Mixpanel.sharedInstance(withToken: token, launchOptions: launchOptions)
+        mixpanel.enableLogging = SwiftlyticsBuildConfiguration.isDebug
         return true
     }
     
@@ -36,6 +34,10 @@ public class MixpanelAnalyticsProvider: AnalyticsProvider {
         mixpanel.registerSuperProperties(["distinct_id": id])
     }
 
+    public func resetUser() {
+        mixpanel.reset()
+    }
+    
     public func setUserProperty(name propertyName: String, withValue value: Any) {
         if let value = value as? String {
             mixpanel.registerSuperProperties([propertyName: value])
